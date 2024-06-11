@@ -1,0 +1,59 @@
+{
+  "name": "@shepardliu/sharp-axios",
+  "description": "sharp-axios is a Promise based HTTP client for the browser and node.js",
+  "author": "Shepard Liu",
+  "version": "0.0.0",
+  "license": "MIT",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liuyunhe/sharp-axios"
+  },
+  "keywords": [
+    "Promise",
+    "HTTP",
+    "Node"
+  ],
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/umd/sharp-axios.umd.cjs",
+  "module": "./dist/es/sharp-axios.js",
+  "types": "./dist/types/src/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/es/sharp-axios.js",
+      "require": "./dist/umd/sharp-axios.umd.cjs",
+      "types": "./dist/types/src/index.d.ts"
+    },
+    "./dist/": {
+      "import": "./dist/",
+      "require": "./dist/"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "pnpm run build-only",
+    "build-only": "run-p build-es build-umd",
+    "build-umd": "vite build --config vite.umd.config.ts",
+    "build-es": "vite build --config vite.es.config.ts",
+    "preview": "vite preview",
+    "prepublishOnly": "pnpm run build",
+    "publish": "pnpm publish --access=public",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "@types/jasmine": "^5.1.4",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.14.2",
+    "colors": "^1.4.0",
+    "jest": "^29.7.0",
+    "jest-config": "^29.7.0",
+    "npm-run-all2": "^6.2.0",
+    "ts-jest": "^29.1.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0",
+    "vite-plugin-dts": "^3.9.1"
+  }
+}
