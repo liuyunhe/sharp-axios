@@ -1,5 +1,11 @@
 {
-  "include": ["src/index.ts","src/axios.ts", "src/types/*","src/helpers/*","src/core/*"],
+  "include": [
+    "src/index.ts",
+    "src/axios.ts",
+    "src/types/*",
+    "src/helpers/*",
+    "src/core/*"
+  ],
   "compilerOptions": {
     "composite": true,
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
@@ -7,6 +13,11 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
-    },
-  }
+    }
+  },
+  "references": [
+    {
+      "path": "./tsconfig.json"
+    }
+  ]
 }
